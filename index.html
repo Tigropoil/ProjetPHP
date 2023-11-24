@@ -11,14 +11,24 @@
 
     </header class="header">
         <div class="logo">
-
-        </div>
-        <div class="connecter">
-            <a href="Connexion.php">Connexion</a>
+            <p>logo</p>
         </div>
     <body>
-        <h1>Bienvenue sur DocteurLibre</h1>
-        <p>ZEBI</p>
+        <div class="titre">
+            <h1>Bienvenue sur DocteurLibre</h1>
+        </div>
+        <div class="corps">
+            <p>
+                <form action="connexion.php" method="post">
+                    <label for="pseudo">Pseudo :</label>
+                    <input type="text" id="pseudo" name="pseudo"><br><br>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password"><br><br>
+                    <input type="submit" value="Se connecter">
+                </form>
+            </p>
+        </div>
+        
     </body>
 
 </html>
