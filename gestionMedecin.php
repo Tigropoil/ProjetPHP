@@ -16,8 +16,8 @@
 
 // Exécuter une requête SELECT pour récupérer les informations des médecins
 
-function afficherMedecins($conn) {
-    $query = "SELECT * FROM medecins";
+function affichermedecin($conn) {
+    $query = "SELECT * FROM medecin";
     $result = mysqli_query($conn, $query);
 
     // Afficher les informations des médecins dans un tableau
@@ -37,7 +37,7 @@ function afficherMedecins($conn) {
     }
 }
 
-afficherMedecins($conn);
+affichermedecin($conn);
 
 ?>
 

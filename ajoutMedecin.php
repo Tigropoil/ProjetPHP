@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $specialite = $_POST["specialite"];
 
     // Exécuter une requête INSERT pour ajouter le médecin à la base de données
-    $sql = "INSERT INTO medecins (nom, specialite) VALUES ('$nom', '$specialite')";
+    $sql = "INSERT INTO medecin (nom, specialite) VALUES ('$nom', '$specialite')";
     if ($conn->query($sql) === TRUE) {
         echo "Médecin ajouté avec succès.";
     } else {
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Rediriger l'utilisateur vers la page d'affichage des médecins après l'ajout
-header("Location: affichageMedecins.php");
+header("Location: affichagemedecin.php");
 exit;
 
 
