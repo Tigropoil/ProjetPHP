@@ -7,15 +7,20 @@
 .logo{
     display: inline-flex;
 }
-.connecter{
-    display: inline-flex;
-    
-}
 .top{
     display: inline;
-    background-color: #4882DF;
-
+    margin: 5%;
+    padding: 0%;
+    border: 5%;
 }
 header{
     background-color: #4882DF;
+}
+.titre{
+    display: inline;
+    text-align: center;
+}
+.corps{
+    display: inline;
+    text-align: center;
 }
