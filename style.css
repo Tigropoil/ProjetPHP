@@ -1,0 +1,14 @@
+*{
+    border: solid 2px black;
+}
+.logo{
+    display: inline-flex;
+}
+.connecter{
+    display: inline-flex;
+    
+}
+.header{
+    display: inline;
+    background-color: #4882DF;
+}
