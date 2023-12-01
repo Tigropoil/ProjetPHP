@@ -9,18 +9,25 @@
 }
 .top{
     display: inline;
-    margin: 5%;
-    padding: 0%;
-    border: 5%;
 }
 header{
-    background-color: #4882DF;
+    background-color: rgb(159, 207, 230);
 }
 .titre{
     display: inline;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 .corps{
     display: inline;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+form{
+    border : solid 2px black;
+    border-radius: 20px;
+    padding : 2%;
+    margin: 20%;
+    margin-top: 0%;
+    background-color: rgb(159, 207, 230);
 }
