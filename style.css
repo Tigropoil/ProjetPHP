@@ -11,7 +11,11 @@
     display: inline;
 }
 header{
-    background-color: rgb(159, 207, 230);
+    background: rgb(159, 207, 230);
+    padding: 30px;
+    text-align: center;
+    margin: -1%;
+    margin-bottom: 0%;
 }
 .titre{
     display: inline;
@@ -27,7 +31,24 @@ form{
     border : solid 2px black;
     border-radius: 20px;
     padding : 2%;
-    margin: 20%;
+    margin: 35%;
     margin-top: 0%;
     background-color: rgb(159, 207, 230);
+}
+@media only screen and (max-width:800px){
+	form{
+        border : solid 2px black;
+        border-radius: 20px;
+        padding : 2%;
+        margin: 20%;
+        margin-top: 0%;
+        background-color: rgb(159, 207, 230);
+    }
+    header{
+        background: rgb(159, 207, 230);
+        padding: 30px;
+        text-align: center;
+        margin: -3%;
+        margin-bottom: 0%;
+    }
 }
