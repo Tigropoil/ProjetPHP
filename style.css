@@ -35,6 +35,9 @@ form{
     margin-top: 0%;
     background-color: rgb(159, 207, 230);
 }
+fieldset{
+    border: 0;
+}
 @media only screen and (max-width:800px){
 	form{
         border : solid 2px black;
