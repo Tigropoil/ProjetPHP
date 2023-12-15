@@ -6,14 +6,6 @@
     <title>Connexion</title>
 </head>
 <body>
-    <h1>Connexion</h1>
-    <form action="connexion.php" method="post">
-        <label for="pseudo">Pseudo :</label>
-        <input type="text" id="pseudo" name="pseudo"><br><br>
-        <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Se connecter">
-    </form>
 </body>
 </html>
 

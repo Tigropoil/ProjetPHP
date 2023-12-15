@@ -18,37 +18,28 @@ $username = "root";
 $password = "";
 $dbname = "cabinet";
 
+$nom=$_POST['nom'];
+$prenom=$_POST['prenom'];
+$civilite=$_POST['civilite'];
+$mdp=$_POST['mdp'];
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+
+}
+try{
+    $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $password);
+    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    $sql1 = "INSERT INTO medecin(Nom,Prenom,civilite,mdp)
+            VALUES('$nom','$prenom','$civilite','$mdp')";
+    $dbco->exec($sql1);
+    
+    echo 'Entrées ajoutées dans la table';
 }
 
-// Créer un formulaire avec les champs nécessaires pour ajouter un médecin
-echo '<form method="POST" action="">
-    <label for="nom">Nom:</label>
-    <input type="text" name="nom" id="nom" required><br>
-    <label for="specialite">Spécialité:</label>
-    <input type="text" name="specialite" id="specialite" required><br>
-    <input type="submit" value="Ajouter">
-</form>';
-
-// Valider les données du formulaire côté serveur
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST["nom"];
-    $specialite = $_POST["specialite"];
-
-    // Exécuter une requête INSERT pour ajouter le médecin à la base de données
-    $sql = "INSERT INTO medecin (nom, specialite) VALUES ('$nom', '$specialite')";
-    if ($conn->query($sql) === TRUE) {
-        echo "Médecin ajouté avec succès.";
-    } else {
-        echo "Erreur lors de l'ajout du médecin: " . $conn->error;
-    }
+catch(PDOException $e){
+  echo "Erreur : " . $e->getMessage();
 }
-
-// Rediriger l'utilisateur vers la page d'affichage des médecins après l'ajout
-header("Location: affichagemedecin.php");
-exit;
-
-
 ?>
