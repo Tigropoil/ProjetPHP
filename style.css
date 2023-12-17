@@ -1,9 +1,4 @@
-*{
-   /*
-   border: solid 2px black; 
-   */
-    
-}
+
 .logo{
     display: inline-flex;
 }
@@ -27,7 +22,7 @@ header{
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
-.corps-secretariat{
+.corpssecretariat{
     display: inline;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -59,7 +54,7 @@ fieldset{
         margin: -3%;
         margin-bottom: 0%;
     }
-    .corps-secretariat{
+    .corpssecretariat{
         display: flex;
         flex-direction: column;
         text-align: center;
