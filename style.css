@@ -23,7 +23,9 @@ header{
     font-family: 'Poppins', sans-serif;
 }
 .corpssecretariat{
-    display: inline;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
