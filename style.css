@@ -7,10 +7,12 @@
 }
 header{
     background: rgb(159, 207, 230);
-    padding: 30px;
     text-align: center;
-    margin: -1%;
-    margin-bottom: 0%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: calc(-50vw + 50%);
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .titre{
     display: inline;
@@ -25,8 +27,10 @@ header{
 .secret{
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    /*justify-content: center;*/
     font-family: 'Poppins', sans-serif;
+
 }
 form{
     border : solid 2px black;
