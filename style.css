@@ -13,6 +13,22 @@ header{
     margin-top: calc(-50vw + 50%);
     padding-top: 1%;
     padding-bottom: 1%;
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 0.5%;
+}
+.boutonHeader{
+    display: flex;
+    justify-content:right;
+    font-family: 'Poppins', sans-serif;
+    grid-column: 3;
+    margin-right: 2%;
+    margin-top: -5%;
+    margin-bottom: -5%;
+}
+.top{
+    grid-column: 2;
 }
 .titre{
     display: inline;
@@ -47,6 +63,7 @@ fieldset{
     height: 300px;
     width: 300px;
 }
+
 @media only screen and (max-width:800px){
 	form{
         border : solid 2px black;
@@ -68,5 +85,14 @@ fieldset{
         flex-direction: column;
         text-align: center;
         font-family: 'Poppins', sans-serif;
+    }
+    .boutonHeader{
+        display: flex;
+        justify-content:right;
+        font-family: 'Poppins', sans-serif;
+        grid-column: 3;
+        margin-right: 2%;
+        margin-top: -10%;
+        margin-bottom: -20%;
     }
 }
