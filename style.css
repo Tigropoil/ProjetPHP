@@ -1,9 +1,4 @@
-*{
-   /*
-   border: solid 2px black; 
-   */
-    
-}
+
 .logo{
     display: inline-flex;
 }
@@ -12,10 +7,28 @@
 }
 header{
     background: rgb(159, 207, 230);
-    padding: 30px;
     text-align: center;
-    margin: -1%;
-    margin-bottom: 0%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: calc(-50vw + 50%);
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 0.5%;
+}
+.boutonHeader{
+    display: flex;
+    justify-content:right;
+    font-family: 'Poppins', sans-serif;
+    grid-column: 3;
+    margin-right: 2%;
+    margin-top: -5%;
+    margin-bottom: -5%;
+}
+.top{
+    grid-column: 2;
 }
 .titre{
     display: inline;
@@ -26,6 +39,14 @@ header{
     display: inline;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+}
+.secret{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    /*justify-content: center;*/
+    font-family: 'Poppins', sans-serif;
+
 }
 form{
     border : solid 2px black;
@@ -38,6 +59,11 @@ form{
 fieldset{
     border: 0;
 }
+.imgS{
+    height: 300px;
+    width: 300px;
+}
+
 @media only screen and (max-width:800px){
 	form{
         border : solid 2px black;
@@ -53,5 +79,20 @@ fieldset{
         text-align: center;
         margin: -3%;
         margin-bottom: 0%;
+    }
+    .secret{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    .boutonHeader{
+        display: flex;
+        justify-content:right;
+        font-family: 'Poppins', sans-serif;
+        grid-column: 3;
+        margin-right: 2%;
+        margin-top: -10%;
+        margin-bottom: -20%;
     }
 }
