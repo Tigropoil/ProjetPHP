@@ -15,7 +15,6 @@
 // Your database connection code here
 
 // Exécuter une requête SELECT pour récupérer les informations des médecins
-
 function affichermedecin($conn) {
     $query = "SELECT * FROM medecin";
     $result = mysqli_query($conn, $query);

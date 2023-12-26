@@ -24,7 +24,7 @@
             die('Erreur : '.$e->getMessage());
     }
     if ($bdd) {
-        header('Location: edtMed.html');
+        header('Location: ../html/secretariat.html');
         ?>
         <p><?php echo "connexion réussie"; ?></p>
         <?php
