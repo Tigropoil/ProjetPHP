@@ -6,7 +6,7 @@
     <title>ajoutMedecin</title>
 </head>
 <body>
-    
+    <a href="../html/medecin.html">Medecin</a>
 </body>
 </html>
 
@@ -14,14 +14,14 @@
 
 // Établir une connexion à la base de données
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "med1";
+$password = "med1";
 $dbname = "cabinet";
 
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $civilite=$_POST['civilite'];
-$mdp=$_POST['mdp'];
+$specialite=$_POST['specialite'];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -29,11 +29,11 @@ if ($conn->connect_error) {
 
 }
 try{
-    $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $password);
+    $dbco = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql1 = "INSERT INTO medecin(Nom,Prenom,civilite,mdp)
-            VALUES('$nom','$prenom','$civilite','$mdp')";
+    $sql1 = "INSERT INTO medecin(Nom,Prenom,civilite,specialite)
+            VALUES('$nom','$prenom','$civilite','$specialite')";
     $dbco->exec($sql1);
     
     echo 'Entrées ajoutées dans la table';
