@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="../html/patient.html">Medecin</a>
+    <a href="../html/utilisateur.html">patient</a>
 </body>
 </html>
 <?php
@@ -29,7 +29,11 @@
     // Afficher les informations des médecins dans un tableau
     if (mysqli_num_rows($result) > 0) {
         echo "<table>";
-        echo "<tr><th>Nom</th><th>Spécialité</th><th>Adresse</th></tr>";
+        $columns = mysqli_fetch_fields($result);
+        foreach ($columns as $column) {
+            echo "<th>" . $column->name . "</th>";
+        }
+        echo "</tr>";
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>";
             echo "<td>" . $row['civilite'] . "</td>";
