@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="../html/medecin.html">Medecin</a>
+    <a href="../html/patient.html">Medecin</a>
 </body>
 </html>
 <?php
@@ -34,7 +34,14 @@
             echo "<tr>";
             echo "<td>" . $row['civilite'] . "</td>";
             echo "<td>" . $row['nom'] . "</td>";
-            echo "<td>" . $row['prenom'] . "</td>";;
+            echo "<td>" . $row['prenom'] . "</td>";
+            echo "<td>" . $row['adresse'] . "</td>";
+            echo "<td>" . $row['ville'] . "</td>";
+            echo "<td>" . $row['codePostal'] . "</td>";
+            echo "<td>" . $row['dateNaissance'] . "</td>";
+            echo "<td>" . $row['lieuNaissance'] . "</td>";
+            echo "<td>" . $row['numSecu'] . "</td>";
+            echo "<td>" . $row['id_medecin'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
