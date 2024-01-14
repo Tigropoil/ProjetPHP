@@ -41,6 +41,10 @@
             echo "<td>" . $row['nom'] . "</td>";
             echo "<td>" . $row['prenom'] . "</td>";
             echo "<td>" . $row['specialite'] . "</td>";
+            echo"<td>
+                    <form action='./suppressionMedecin.php' method='post'>
+                        <input type='submit' name='id' value='" . $row['id_medecin'] . "'>
+                    </form>";
             echo "</tr>";
         }
         echo "</table>";

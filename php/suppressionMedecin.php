@@ -12,8 +12,8 @@
 <?php
 // Établir une connexion à la base de données
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "med1";
+$password = "med1";
 $dbname = "cabinet";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,10 +23,10 @@ if ($conn->connect_error) {
 }
 
 // Récupérer l'identifiant du médecin à supprimer à partir de l'URL ou d'un formulaire
-$medecinId = $_GET['id']; // Supposons que l'identifiant du médecin est passé dans l'URL
+$medecinId = $_POST['id']; // Supposons que l'identifiant du médecin est passé dans l'URL
 
 // Exécuter une requête DELETE pour supprimer le médecin de la base de données
-$sql = "DELETE FROM medecin WHERE id = $medecinId";
+$sql = "DELETE FROM medecin WHERE id_medecin = $medecinId";
 
 if ($conn->query($sql) === TRUE) {
     echo "Médecin supprimé avec succès";
@@ -35,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 // Rediriger l'utilisateur vers la page d'affichage des médecins après la suppression
-header("Location: affichagemedecin.php");
+header("Location: ./listeMedecin.php");
 exit;
 
 $conn->close();

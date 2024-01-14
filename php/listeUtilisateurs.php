@@ -8,7 +8,7 @@
 <body>
     <a href="../html/utilisateur.html">patient</a>
 </body>
-</html>
+</html>35
 <?php
     $pseudo = "med1";
     $password = "med1";
@@ -46,6 +46,10 @@
             echo "<td>" . $row['lieuNaissance'] . "</td>";
             echo "<td>" . $row['numSecu'] . "</td>";
             echo "<td>" . $row['id_medecin'] . "</td>";
+            echo"<td>
+                    <form action='./supprimerUtilisateurs.php' method='post'>
+                        <input type='submit' name='id' value='" . $row['id_patient'] . "'>
+                    </form>";
             echo "</tr>";
         }
         echo "</table>";
