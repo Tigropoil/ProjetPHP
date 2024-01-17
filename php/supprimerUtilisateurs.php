@@ -16,11 +16,11 @@ $patientId = $_POST['id']; // Supposons que l'identifiant du médecin est passé
 
 // Exécuter une requête DELETE pour supprimer le médecin de la base de données
 $sql = "DELETE FROM patient WHERE id_patient = $patientId";
-
+$conn->query($sql2);
 if ($conn->query($sql) === TRUE) {
-    echo "patient supprimé avec succès";
+    echo "patirnt supprimé avec succès";
 } else {
-    echo "Erreur lors de la suppression du patient: " . $conn->error;
+    echo "Erreur lors de la suppression du médecin: " . $conn->error;
 }
 
 // Rediriger l'utilisateur vers la page d'affichage des médecins après la suppression

@@ -26,9 +26,11 @@ if ($conn->connect_error) {
 $medecinId = $_POST['id']; // Supposons que l'identifiant du médecin est passé dans l'URL
 
 // Exécuter une requête DELETE pour supprimer le médecin de la base de données
+$sql2 = "DELETE FROM patient WHERE id_medecin = $medecinId";
 $sql = "DELETE FROM medecin WHERE id_medecin = $medecinId";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql2) === TRUE) {
+    $conn->query($sql);
     echo "Médecin supprimé avec succès";
 } else {
     echo "Erreur lors de la suppression du médecin: " . $conn->error;
