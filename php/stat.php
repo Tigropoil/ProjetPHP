@@ -33,6 +33,48 @@
             </div>
     </header>
 <body>
-    <a href="../html/medecin.html">medecin</a>
+
+<?php
+// Assuming you have established a database connection
+
+// Query to retrieve the distribution of users by gender and age
+$query = "SELECT civilite, 
+                 CASE 
+                    WHEN TIMESTAMPDIFF(YEAR, dateNaissance, CURDATE()) < 25 THEN 'Moins de 25 ans'
+                    WHEN TIMESTAMPDIFF(YEAR, dateNaissance, CURDATE()) BETWEEN 25 AND 50 THEN 'Entre 25 et 50 ans'
+                    ELSE 'Plus de 50 ans'
+                 END AS age_group,
+                 COUNT(*) AS count
+          FROM Patient
+          GROUP BY civilite, age_group";
+
+$result = mysqli_query($connection, $query);
+
+// Generate the table
+echo '<table>
+        <tr>
+            <th>Sexe</th>
+            <th>Tranche d\'âge</th>
+            <th>Nombre d\'usagers</th>
+        </tr>';
+
+while ($row = mysqli_fetch_assoc($result)) {
+    echo '<tr>
+            <td>' . $row['civilite'] . '</td>
+            <td>' . $row['age_group'] . '</td>
+            <td>' . $row['count'] . '</td>
+          </tr>';
+}
+
+echo '</table>';
+
+// Close the database connection
+mysqli_close($connection);
+?>
+
+</body>
+</html>
+
+
 </body>
 </html>
