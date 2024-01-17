@@ -63,6 +63,12 @@ fieldset{
     height: 300px;
     width: 300px;
 }
+tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+
+}
 
 @media only screen and (max-width:800px){
 	form{
