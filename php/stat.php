@@ -36,6 +36,24 @@
 
 <?php
 // Assuming you have established a database connection
+// Informations de connexion à la base de données
+$bdname = 'cabinet';
+$server='localhost';
+$username = "med1";
+$password = "med1";
+
+// Création de la connexion
+$connection = mysqli_connect($server, $username, $password, $dbname);
+
+// Vérification de la connexion
+if (!$connection) {
+    die("Échec de la connexion à la base de données : " . mysqli_connect_error());
+}
+
+// Utilisez la connexion pour exécuter des requêtes SQL ou effectuer d'autres opérations sur la base de données
+
+// Fermeture de la connexion
+mysqli_close($connection);
 
 // Query to retrieve the distribution of users by gender and age
 $query = "SELECT civilite, 
