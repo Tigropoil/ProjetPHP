@@ -24,10 +24,10 @@
                         <a href="../html/secretariat.html" class="aa">Secretariat</a>
                     </li>
                     <li>
-                        <a href="../html/utilisateur.html" class="aa">Patients</a>
+                        <a href="../php/listeUtilisateurs.php" class="aa">Patients</a>
                     </li>
                     <li>
-                        <a href="../html/medecin.html" class="aa">Médecins</a>
+                        <a href="../php/listeMedecin.php" class="aa">Médecins</a>
                     </li>
                     <li>
                         <a href="../php/stat.php" class="aa">Statistiques</a>
