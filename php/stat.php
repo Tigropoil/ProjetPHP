@@ -74,7 +74,3 @@ mysqli_close($connection);
 
 </body>
 </html>
-
-
-</body>
-</html>
