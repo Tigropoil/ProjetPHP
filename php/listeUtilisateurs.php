@@ -33,10 +33,9 @@
             </div>
     </header>
 <body>
-    <a href="../html/utilisateur.html">patient</a>
-</body>
-</html>35
-<?php
+    <h1>Liste des patients<h1>
+
+    <?php
     $pseudo = "med1";
     $password = "med1";
     $bdname = 'cabinet';
@@ -83,4 +82,7 @@
     } else {
         echo "Aucun utilisateur trouvé.";
     }
-?>
+    ?>
+    <a href="../php/ajoutUtilisateurs" class="aa">Ajouter un patient</a>
+</body>
+</html>

@@ -33,10 +33,8 @@
             </div>
     </header>
 <body>
-    <a href="../html/medecin.html">medecin</a>
-</body>
-</html>
-<?php
+    <h1>Liste des RDV<h1>
+    <?php
     $pseudo = "med1";
     $password = "med1";
     $bdname = 'cabinet';
@@ -78,4 +76,10 @@
     } else {
         echo "Aucun médecin trouvé.";
     }
-?>
+    ?>
+    <a href="../php/ajoutRDV" class="aa">Ajouter un RDV</a>
+</body>
+
+
+</html>
+
