@@ -1,13 +1,9 @@
 ><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liste medecin</title>
 </head>
 <header>
         <div class="top">
@@ -33,50 +29,44 @@
             </div>
     </header>
 <body>
-    <h1>Liste des Médecins<h1>
-    <?php
-    $pseudo = "med1";
-    $password = "med1";
-    $bdname = 'cabinet';
-    $server='localhost';
-    // Connexion à la base de données
-    try
-    {
-        $bdd = new mysqli($server, $pseudo, $password, $bdname);
-    }
-    catch(Exception $e)
-    {
-            die('Erreur : '.$e->getMessage());
-    }
-    $query = "SELECT * FROM medecin";
-    $result = mysqli_query($bdd, $query);
+    <a href="../html/ajoutMedecin.html">medecin</a>
+    <table id="myTable">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Civilité</th>
+                        <th>Choix</th>
+                    </tr>
+<?php
+    include '../BDD/bddmedecin.php';
 
-    // Afficher les informations des médecins dans un tableau
-    if (mysqli_num_rows($result) > 0) {
-        echo "<table>";
-        $fields = mysqli_fetch_fields($result);
-        echo "<tr>";
-        foreach ($fields as $field) {
-            echo "<th>" . $field->name . "</th>";
-        }
-        echo "</tr>";
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['civilite'] . "</td>";
-            echo "<td>" . $row['nom'] . "</td>";
-            echo "<td>" . $row['prenom'] . "</td>";
-            echo "<td>" . $row['specialite'] . "</td>";
-            echo"<td>
-                    <form action='./suppressionMedecin.php' method='post'>
-                        <input type='submit' name='id' value='" . $row['id_medecin'] . "'>
-                    </form>";
-            echo "</tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "Aucun médecin trouvé.";
-    }
-    ?>
-    <a href="../html/ajoutMedecin.html" class="aa">Ajouter un médecin</a>
-</body>
+    $medecin = new BddMedecin();
+    $records = $medecin->afficherMedecinlistquery();
+          while ($row = $records->fetch()) {
+            $recordID = $row["id_medecin"]; ?>
+            <tr>
+              <td>
+                <?php echo $row["nom"]; ?>
+              </td>
+              <td>
+                <?php echo $row["prenom"]; ?>
+              </td>
+              <td>
+                <?php echo $row["civilite"]; ?>
+                <td>
+                    <?php echo $row["specialite"]; ?>
+                </td>
+                <?php
+                    echo"<td>
+                        <form action='./suppressionMedecin.php' method='post'>
+                            <input type='submit' name='id' value='" . $row['id_medecin'] . "'>
+                        </form>";
+                    echo "</td>";
+                ?>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>
+        </body>
 </html>

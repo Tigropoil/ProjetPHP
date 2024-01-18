@@ -24,10 +24,10 @@
                         <a href="../html/secretariat.html" class="aa">Secretariat</a>
                     </li>
                     <li>
-                        <a href="../php/listeUtilisateurs.php" class="aa">Patients</a>
+                        <a href="./listeUtilisateurs.php" class="aa">Patients</a>
                     </li>
                     <li>
-                        <a href="../php/listeMedecin.php" class="aa">Médecins</a>
+                        <a href="./listeMedecin.php" class="aa">Médecins</a>
                     </li>
                     <li>
                         <a href="../php/stat.php" class="aa">Statistiques</a>
@@ -66,37 +66,25 @@
                     <input type="text" id="lieuN" name="lieuN"><br><br>
                     <label for="numSecu">Numéro de sécurité sociale :</label>
                     <input type="text" id="numSecu" name="numSecu"><br><br>
-
-                    
                     
                     <label>Médecin référent</label>
-          <?php
-          $pseudo = 'med1';
-          $password = 'med1';
-          $bdname = 'cabinet';
-          $server='localhost';
-          // Connexion à la base de données
-          try
-          {
-              $bdd = new PDO("mysql:host=$server;dbname=$bdname", $pseudo, $password);
-          }
-          catch(Exception $e)
-          {
-                  die('Erreur : '.$e->getMessage());
-          }
+                        <?php
+                            require("../BDD/bddmedecin.php");
+                            $BDDmed = new BddMedecin();
+                            $records = $BDDmed->select();
 
-        echo "<select name='id_medecin'>";
-            $records = $bdd->query("SELECT * FROM medecin");
-        while ($row = $records->fetch()) {
-            $recordID = $row["id_medecin"];
-            echo "<option value='" . $recordID . "'>" . $row["nom"] . " " . $row["prenom"] . "</option>";
-        }
-        // Close the select element
-        echo "</select>"; 
-        echo $recordID;
-        ?>
+                            echo "<select name='medid'>";
+
+                            while ($row = $records->fetch()) {
+                                $recordID = $row["id_medecin"];
+                                echo "<option value='" . $row["id_medecin"] . "'>" . $row["nom"] . " " . $row["renom"] . "</option>";
+                            }
+
+                             // Close the select element
+                            echo "</select>"; ?>
 
                     <input type="submit" value="Créer un compte">
+                    
                 </form>
             </p> 
         </div>
@@ -120,29 +108,11 @@
     $dateNaissance=$_POST['dateN'];
     $lieuNaissance=$_POST['lieuN'];
     $numSecu=$_POST['numSecu'];
+    $medecinId=$_POST['medid'];
 
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+include '../BDD/bddpatient.php';
 
-}
-try{
-    $dbco = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    $sql2="SET GLOBAL FOREIGN_KEY_CHECKS=0;";
-    $sql1 = "INSERT INTO patient(adresse,civilite,codePostal,dateNaissance,lieuNaissance,nom,numSecu,prenom,ville,id_medecin)
-            VALUES('$adresse','$civilite','$codepostal','$dateNaissance','$lieuNaissance','$nom','$numSecu','$prenom','$ville','$recordID') ";
-    $sql3="SET GLOBAL FOREIGN_KEY_CHECKS=1;";
-    $dbco->exec($sql2);        
-    $dbco->exec($sql1);
-    echo $recordID;
-    echo 'Entrées ajoutées dans la table';
-}
-
-catch(PDOException $e){
-  echo "Erreur : " . $e->getMessage();
-}
-
+$bdd = new bddpatient();
+$bdd->ajouterpatientquery($nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu, $medecinId);
 ?>
