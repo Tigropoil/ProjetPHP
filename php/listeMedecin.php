@@ -6,37 +6,47 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="../html/medecin.html">Medecin</a>
+    <a href="../html/ajoutMedecin.html">medecin</a>
 </body>
 </html>
 <?php
-    $pseudo = "med1";
-    $password = "med1";
+    include 'bd.php';
+
+    $server = 'localhost';
     $bdname = 'cabinet';
-    $server='localhost';
-    // Connexion à la base de données
-    try
-    {
-        $bdd = new mysqli($server, $pseudo, $password, $bdname);
-    }
-    catch(Exception $e)
-    {
-            die('Erreur : '.$e->getMessage());
-    }
+    $pseudo = 'med1';
+    $password = 'med1';
+    $bdd=connectToDatabase($server,$bdname,$pseudo,$password);
+
     $query = "SELECT * FROM medecin";
-    $result = mysqli_query($bdd, $query);
+    $stmt = $bdd->query($query);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
     // Afficher les informations des médecins dans un tableau
-    if (mysqli_num_rows($result) > 0) {
+    if ($stmt->rowCount() > 0) {
         echo "<table>";
-        echo "<tr><th>Nom</th><th>Spécialité</th><th>Adresse</th></tr>";
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['civilite'] . "</td>";
-            echo "<td>" . $row['nom'] . "</td>";
-            echo "<td>" . $row['prenom'] . "</td>";
-            echo "<td>" . $row['specialite'] . "</td>";
-            echo "</tr>";
+        $q = $bdd->prepare("DESCRIBE medecin");
+        $q->execute();
+        $table_fields = $q->fetchAll(PDO::FETCH_COLUMN);
+
+        echo "<tr>";
+        foreach ($table_fields as $field) {
+            echo "<th>{$field}</th>";
+        }
+        echo "</tr>";
+        $records = $bdd->select();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo"$row";
+            echo "<td>".$row['civilite'] . "</td>";
+            echo "<td>".$row['nom']."</td>";
+            echo "<td>".$row['prenom']."</td>";
+                                                                                        echo "<td>".$row['specialite']."</td>";
+            echo "<td>
+                    <form action='./suppressionMedecin.php' method='post'>
+                        <input type='submit' name='id' value='".$row['id_medecin']."'>
+                    </form>
+                </td>";
         }
         echo "</table>";
     } else {
