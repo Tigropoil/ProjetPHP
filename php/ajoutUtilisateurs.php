@@ -108,5 +108,5 @@ if(isset($_POST['nom'])
     && isset($_POST['numSecu']) 
     && isset($_POST['medid'])) {
     $bdd = new bddpatient();
-    $bdd->ajouterpatientquery(isset($_POST['civilite']), isset($_POST['nom']), isset($_POST['prenom']), isset($_POST['adresse']), isset($_POST['ville']), isset($_POST['codePostal']), isset($_POST['dateN']), isset($_POST['lieuN']), isset($_POST['numSecu']), isset($_POST['medid']));
+    $bdd->ajouterpatientquery($_POST['civilite'],$_POST['nom'],$_POST['prenom'],$_POST['adresse'],$_POST['ville'],$_POST['codePostal'],$_POST['dateN'],$_POST['lieuN'],$_POST['numSecu'],$_POST['medid']);
 }?>
