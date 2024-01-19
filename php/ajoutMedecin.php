@@ -73,7 +73,7 @@ include '../BDD/bddmedecin.php';
 // Exécuter une requête INSERT pour ajouter le médecin à la base de données
 if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite']) && isset($_POST['specialite'])) {
 $addmed = new BddMedecin();
-$addmed->ajoutermedecinquery($_POST['nom'], $_POST['prenom'], $_POST['civilite'], ['specialite']);
+$addmed->ajoutermedecinquery($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['specialite']);
 }?>
     </body>
 

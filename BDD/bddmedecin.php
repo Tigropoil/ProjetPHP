@@ -5,17 +5,10 @@ class BddMedecin {
 
 
     public function connectmed() {
-        $host = "localhost";
-        $username = "med1";
-        $password = "med1";
-        $database = "cabinet";
-
-        try {
-            $this->conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-        }
+        // Code de connexion à la base de données
+        include 'BDD.php';
+        $bdd= new bdd();
+        $this->conn = $bdd->connect();
         return $this->conn;
     }
 

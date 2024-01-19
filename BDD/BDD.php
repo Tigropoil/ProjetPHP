@@ -2,7 +2,7 @@
     class bdd{
         private $conn;
 
-        public function connectrdv() {
+        public function connect() {
             // Code de connexion à la base de données
             $host = "localhost";
             $username = $_COOKIE['login'];
