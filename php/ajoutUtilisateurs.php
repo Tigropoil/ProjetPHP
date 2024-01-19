@@ -94,25 +94,18 @@
 </html>
 
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "cabinet";
-
-    $nom=$_POST['nom'];
-    $prenom=$_POST['prenom'];
-    $civilite=$_POST['civilite'];
-    $adresse=$_POST['adresse'];
-    $ville=$_POST['ville'];
-    $codepostal=$_POST['codePostal'];
-    $dateNaissance=$_POST['dateN'];
-    $lieuNaissance=$_POST['lieuN'];
-    $numSecu=$_POST['numSecu'];
-    $medecinId=$_POST['medid'];
-
 
 include '../BDD/bddpatient.php';
-
-$bdd = new bddpatient();
-$bdd->ajouterpatientquery($nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu, $medecinId);
-?>
+if(isset($_POST['nom']) 
+    && isset($_POST['prenom']) 
+    && isset($_POST['civilite']) 
+    && isset($_POST['adresse']) 
+    && isset($_POST['ville']) 
+    && isset($_POST['codePostal']) 
+    && isset($_POST['dateN']) 
+    && isset($_POST['lieuN']) 
+    && isset($_POST['numSecu']) 
+    && isset($_POST['medid'])) {
+    $bdd = new bddpatient();
+    $bdd->ajouterpatientquery(isset($_POST['civilite']), isset($_POST['nom']), isset($_POST['prenom']), isset($_POST['adresse']), isset($_POST['ville']), isset($_POST['codePostal']), isset($_POST['dateN']), isset($_POST['lieuN']), isset($_POST['numSecu']), isset($_POST['medid']));
+}?>

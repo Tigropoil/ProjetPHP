@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>Ajouter un RDV</title>
+		<title>Ajouter un médecin</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../style.css" />
@@ -36,14 +36,14 @@
         
     <body>
         <div class="titre">
-            <h1>Ajouter un RDV</h1>
+            <h1>Ajouter un Patient</h1>
         </div>
         <div class="corps">
             <p>
 
                 </form>
 
-                <form action="traitement.php" method="post">
+                <form action="ajoutRDV.php" method="post">
                     <label for="medecin">Médecin :</label>
                     <select name="medecin" id="medecin">
                         <?php
@@ -82,12 +82,23 @@
                     <label for="heureRDV">Heure du rendez-vous :</label>
                     <input type="time" id="heureRDV" name="heureRDV"><br><br>
 
+                    <label for="duree">Durée du rendez-vous :</label>
+                    <select name="duree" id="duree">
+                        <option value="30">30 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">1 heure</option>
+                    </select><br><br>
                     <input type="submit" value="Créer un RDV">
                     
                 </form>
             </p> 
         </div>
-        
+        <?php
+        include '../BDD/bddrdv.php';
+        if(isset($_POST['dateRDV']) && isset($_POST['heureRDV']) && isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['duree'])) {
+        $rdv = new BddRdv();
+        $rdv->insertRdv($_POST['dateRDV'], $_POST['heureRDV'], $_POST['patient'], $_POST['medecin'], $_POST['duree']);
+        }?>
     </body>
 
 </html>
