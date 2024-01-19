@@ -15,10 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les valeurs du formulaire
     $login = $_POST["login"];
     $password = $_POST["password"];
-
-    // Créer un cookie avec le login et le mot de passe
-    setcookie("login", $login, time() + 3600); // Expire dans 1 heure
-    setcookie("password", $password, time() + 3600); // Expire dans 1 heure
-    header('Location: ../html/secretariat.html');
+    // Vérifier si le login et le mot de passe sont corrects
+    if ($login == "med1" && $password == "med1") {
+        // Rediriger l'utilisateur vers la page d'accueil
+        header('Location: ../html/secretariat.html');
+        setcookie("login", $login, time() + 3600); // Expire dans 1 heure
+        setcookie("password", $password, time() + 3600); // Expire dans 1 heure
+    } else {
+        // Rediriger l'utilisateur vers la page de connexion
+        header('Location: ../index.html');
+    }   
 }
 ?>
