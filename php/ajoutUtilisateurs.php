@@ -49,21 +49,21 @@
                     </fieldset><br>
                     
                     <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom"><br><br>
+                    <input type="text" id="nom" name="nom" require><br><br>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom"><br><br>
+                    <input type="text" id="prenom" name="prenom" require><br><br>
                     <label for="adresse">Adresse :</label>
-                    <input type="text" id="adresse" name="adresse"><br><br>
+                    <input type="text" id="adresse" name="adresse" require><br><br>
                     <label for="ville">Ville :</label>
-                    <input type="text" id="ville" name="ville"><br><br>
+                    <input type="text" id="ville" name="ville" require><br><br>
                     <label for="codePostal">Code Postal :</label>
-                    <input type="text" id="codePostal" name="codePostal"><br><br>
+                    <input type="text" id="codePostal" name="codePostal" require><br><br>
                     <label for="dateN">Date de naissance :</label>
-                    <input type="date" id="dateN" name="dateN"><br><br>
+                    <input type="date" id="dateN" name="dateN" require><br><br>
                     <label for="lieuN">Lieu de Naissance :</label>
-                    <input type="text" id="lieuN" name="lieuN"><br><br>
+                    <input type="text" id="lieuN" name="lieuN" require><br><br>
                     <label for="numSecu">Numéro de sécurité sociale :</label>
-                    <input type="text" id="numSecu" name="numSecu"><br><br>
+                    <input type="text" id="numSecu" name="numSecu" require><br><br>
                     
                     <label>Médecin référent</label>
                         <?php

@@ -43,7 +43,7 @@ class bddpatient {
         $this->conn = $this->connectpat();
         $sql = "DELETE FROM patient WHERE id_patient = $patientId";
         if ($this->conn->query($sql)) {
-            echo"ok";
+            echo"ok";  
         }else{
             echo "Erreur lors de la suppression du patient";}
         $this->conn = null;

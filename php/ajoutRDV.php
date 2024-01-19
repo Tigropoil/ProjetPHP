@@ -77,13 +77,13 @@
                     </select><br><br>
 
                     <label for="dateRDV">Date du rendez-vous :</label>
-                    <input type="date" id="dateRDV" name="dateRDV"><br><br>
+                    <input type="date" id="dateRDV" name="dateRDV" require><br><br>
                     
                     <label for="heureRDV">Heure du rendez-vous :</label>
-                    <input type="time" id="heureRDV" name="heureRDV"><br><br>
+                    <input type="time" id="heureRDV" name="heureRDV" require><br><br>
 
                     <label for="duree">Durée du rendez-vous :</label>
-                    <select name="duree" id="duree">
+                    <select name="duree" id="duree" require>
                         <option value="30">30 minutes</option>
                         <option value="45">45 minutes</option>
                         <option value="60">1 heure</option>

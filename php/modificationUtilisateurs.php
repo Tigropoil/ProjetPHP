@@ -63,6 +63,7 @@
         }else{
             echo "Patient introuvable.";
         }
+        $patient->modifierpatientquery($idPatient,$nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu,$medecinId);
 
     ?>
 

@@ -49,11 +49,11 @@
                     </fieldset><br>
                     
                     <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom"><br><br>
+                    <input type="text" id="nom" name="nom" require><br><br>
                     <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom"><br><br>
+                    <input type="text" id="prenom" name="prenom" require><br><br>
                     <label for="specialite">Spécialité :</label>
-                    <input type="text" id="specialite" name="specialite"><br><br>
+                    <input type="text" id="specialite" name="specialite" require><br><br>
 
                     <input type="submit" value="Créer un compte">
                     

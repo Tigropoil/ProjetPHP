@@ -6,7 +6,7 @@ class BddMedecin {
 
     private function connectmed() {
         // Code de connexion à la base de données
-        include 'BDD.php';
+        require_once('BDD.php');
         $bdd= new bdd();
         $this->conn = $bdd->connect();
         return $this->conn;
@@ -45,11 +45,13 @@ class BddMedecin {
         header('Location: ./listeMedecin.php');
     }
     
-    public function modifiermedecinquery($nom,$prenom,$civilite,$specialite,$medecinId) {
+    public function modifiermedecinquery($nom,$prenom,$specialite,$medecinId) {
         $this->conn = $this->connectmed();
-        $sql = "UPDATE medecin SET nom=:nom, prenom=:prenom, civilite=:civilite, specialite=:specialite WHERE id_medecin=:medecinId";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute($nom, $prenom, $civilite, $specialite, $medecinId);
+        $stmt = $this->conn->prepare("UPDATE medecin SET nom=?, prenom=?, specialite=? WHERE id_medecin=?");
+        $stmt->bindParam(1, $nom);
+        $stmt->bindParam(2, $prenom);
+        $stmt->bindParam(3, $specialite);
+        $stmt->execute([$nom, $prenom, $specialite]);
         $this->conn = null;
     }
     public function select() {
