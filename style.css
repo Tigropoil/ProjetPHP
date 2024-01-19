@@ -1,5 +1,6 @@
 *{
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 h1{
     text-align: center;
@@ -49,7 +50,7 @@ header{
     /*justify-content: center;*/
 
 }
-form{
+.form{
     border : solid 2px black;
     border-radius: 20px;
     padding : 2%;
@@ -75,7 +76,13 @@ table{
     text-align: center;
     font-size: medium;
 }
-
+.tableau{
+    border: 0;
+    background-color: rgb(255,255,255);
+}
+.bouton{
+    text-align: center;
+}
 @media only screen and (max-width:800px){
 	form{
         border : solid 2px black;

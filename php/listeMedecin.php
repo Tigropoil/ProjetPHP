@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <h1>Liste des médecins<h1><br>
+    <h1>Liste des médecins</h1><br>
     <table id="myTable">
                     <tr>
                         <th>Nom</th>
@@ -65,8 +65,8 @@
                 </td>
                 <?php
                     echo"<td>
-                        <form action='./suppressionMedecin.php' method='post'>
-                            <button type='submit' name='id' value='" . $row['id_medecin'] . "'>Supprimer</button>
+                        <form action='./suppressionMedecin.php' class='tableau' method='post'>
+                            <button type='submit' class='bouton' name='id' value='" . $row['id_medecin'] . "'>Supprimer</button>
                         </form>";
                     echo "</td>";
                 ?>

@@ -40,7 +40,7 @@
         </div>
         <div class="corps">
             <p>
-                <form action="../php/ajoutMedecin.php" method="post">
+                <form action="../php/ajoutMedecin.php" class='form' method="post">
                     <fieldset>
                         <label for="civilite">Monsieur</label>
                         <input type="radio" id="civilite" name="civilite" value="mr" checked />
@@ -73,7 +73,7 @@ include '../BDD/bddmedecin.php';
 // Exécuter une requête INSERT pour ajouter le médecin à la base de données
 if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite']) && isset($_POST['specialite'])) {
 $addmed = new BddMedecin();
-$addmed->ajoutermedecinquery($_POST['nom'], $_POST['prenom'], $_POST['civilite'], ['specialite']);
+$addmed->ajoutermedecinquery($_POST['nom'], $_POST['prenom'], $_POST['civilite'], $_POST['specialite']);
 }?>
     </body>
 
