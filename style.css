@@ -80,8 +80,8 @@ table{
     border: 0;
     background-color: rgb(255,255,255);
 }
-.bouton{
-    text-align: center;
+input{
+    text-align: left;
 }
 @media only screen and (max-width:800px){
 	form{

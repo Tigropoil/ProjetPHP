@@ -66,7 +66,7 @@
                 <?php
                     echo"<td>
                         <form action='./suppressionMedecin.php' class='tableau' method='post'>
-                            <button type='submit' class='bouton' name='id' value='" . $row['id_medecin'] . "'>Supprimer</button>
+                            <button type='submit' name='id' value='" . $row['id_medecin'] . "'>Supprimer</button>
                         </form>";
                     echo "</td>";
                 ?>
