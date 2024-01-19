@@ -31,12 +31,16 @@ class bddpatient {
 
     public function ajouterpatientquery($nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu, $medecinId) {
         $this->conn = $this->connectpat();
+        try{
         $sql = "INSERT INTO patient (nom, prenom, civilite, adresse, ville, codePostal, dateNaissance, lieuNaissance, numSecu, id_medecin) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$nom, $prenom, $civilite, $adresse, $ville, $codepostal, $dateNaissance, $lieuNaissance, $numSecu, $medecinId]);
+        }catch(PDOException $e){
+            error_log("Error executing SQL query: " . $e->getMessage());
+            throw $e;
+        }
         $this->conn = null;
-        header('Location: ./listeUtilisateurs.php');
     }
 
     public function supprimerpatientquery($patientId) {
