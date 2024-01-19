@@ -48,6 +48,10 @@
                         <th>id_medecin</th>
                     </tr>
 <?php
+    if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+        header('Location: ../index.html');
+    }
+    
     include '../BDD/bddpatient.php';
     $bdd = new bddpatient();
     $records = $bdd->afficherpatientlistquery();

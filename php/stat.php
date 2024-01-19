@@ -35,6 +35,9 @@
 <body>
 
 <?php
+    if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+        header('Location: ../index.html');
+    }
 // Assuming you have established a database connection
 // Informations de connexion à la base de données
 $bdname = 'cabinet';

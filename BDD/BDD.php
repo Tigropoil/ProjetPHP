@@ -1,18 +1,22 @@
 <?php
-    function connectToDatabase($pseudo, $password) {
-        $bdname = 'cabinet';
-        $server = 'localhost';
-        
-        try {
-            $bdd = new PDO("mysql:host=$server;dbname=$bdname", $pseudo, $password);
-            return $bdd;
-        } catch(Exception $e) {
-            die('Erreur : '.$e->getMessage());
+    class bdd{
+        private $conn;
+
+        public function connectrdv() {
+            // Code de connexion à la base de données
+            $host = "localhost";
+            $username = $_COOKIE['login'];
+            $password = $_COOKIE['password'];
+            $database = "cabinet";
+    
+            try {
+                $this->conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $this->conn;
+            } catch (PDOException $e) {
+                echo "Connection failed: " . $e->getMessage();
+                return -1;
+        }
         }
     }
-
-    // Utilisation de la fonction
-    $pseudo = $_POST['pseudo'];
-    $password = $_POST['password'];
-    $bdd = connectToDatabase($pseudo, $password);
     ?>

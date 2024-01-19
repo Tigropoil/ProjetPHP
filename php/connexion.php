@@ -10,28 +10,20 @@
 </html>
 
 <?php
-    $pseudo = $_POST['pseudo'];
-    $password = $_POST['password'];
-    $bdname = 'cabinet';
-    $server='localhost';
-    // Connexion à la base de données
-    try
-    {
-        $bdd = new PDO("mysql:host=$server;dbname=$bdname", $pseudo, $password);
-    }
-    catch(Exception $e)
-    {
-            die('Erreur : '.$e->getMessage());
-    }
-    if ($bdd) {
+// Vérifier si le formulaire de connexion a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les valeurs du formulaire
+    $login = $_POST["login"];
+    $password = $_POST["password"];
+    // Vérifier si le login et le mot de passe sont corrects
+    if ($login == "med1" && $password == "med1") {
+        // Rediriger l'utilisateur vers la page d'accueil
         header('Location: ../html/secretariat.html');
-        ?>
-        <p><?php echo "connexion réussie"; ?></p>
-        <?php
-            
+        setcookie("login", $login, time() + 3600); // Expire dans 1 heure
+        setcookie("password", $password, time() + 3600); // Expire dans 1 heure
     } else {
-        ?>
-        <p><?php echo "connexion échouée"; ?></p>
-        <?php
-    }
+        // Rediriger l'utilisateur vers la page de connexion
+        header('Location: ../index.html');
+    }   
+}
 ?>

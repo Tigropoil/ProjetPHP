@@ -94,6 +94,10 @@
             </p> 
         </div>
         <?php
+            if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+                header('Location: ../index.html');
+            }
+            
         include '../BDD/bddrdv.php';
         if(isset($_POST['dateRDV']) && isset($_POST['heureRDV']) && isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['duree'])) {
         $rdv = new BddRdv();

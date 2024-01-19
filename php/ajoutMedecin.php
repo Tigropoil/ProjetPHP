@@ -65,7 +65,9 @@
 
 </html>
 <?php
-
+if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+    header('Location: ../index.html');
+}
 include '../BDD/bddmedecin.php';
 
 // Exécuter une requête INSERT pour ajouter le médecin à la base de données
