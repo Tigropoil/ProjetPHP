@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST["login"];
     $password = $_POST["password"];
     // Vérifier si le login et le mot de passe sont corrects
-    if ($login == "med1" && $password == "med1") {
+    if ($login == "344098" && $password == "$iutinfo") {
         // Rediriger l'utilisateur vers la page d'accueil
         setcookie("login", $login, time() + 3600); // Expire dans 1 heure
         setcookie("password", $password, time() + 3600); // Expire dans 1 heure
