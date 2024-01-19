@@ -60,11 +60,7 @@
                 </form>
             </p> 
         </div>
-        
-    </body>
-
-</html>
-<?php
+        <?php
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $civilite=$_POST['civilite'];
@@ -76,3 +72,6 @@ include '../BDD/bddmedecin.php';
 $addmed = new BddMedecin();
 $addmed->ajoutermedecinquery($nom,$prenom,$civilite,$specialite);
 ?>
+    </body>
+
+</html>

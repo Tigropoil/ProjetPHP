@@ -35,67 +35,7 @@
     </header>
         
     <body>
-        <div class="titre">
-            <h1>Ajouter un Patient</h1>
-        </div>
-        <div class="corps">
-            <p>
-
-                </form>
-
-                <form action="traitement.php" method="post">
-                    <label for="medecin">Médecin :</label>
-                    <select name="medecin" id="medecin">
-                        <?php
-                        // Connexion à la base de données
-                        $conn = new PDO("mysql:host=localhost;dbname=nom_de_la_base_de_donnees", "nom_utilisateur", "mot_de_passe");
-
-                        // Récupération des médecins depuis la table Medecin
-                        $query = "SELECT id_medecin, nom, prenom FROM Medecin";
-                        $result = $conn->query($query);
-
-                        // Affichage des options de la liste déroulante
-                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="' . $row['id_medecin'] . '">' . $row['nom'] . ' ' . $row['prenom'] . '</option>';
-                        }
-
-                        // Fermeture de la connexion à la base de données
-                        $conn = null;
-                        ?>
-                    </select><br><br>
-
-                    <label for="patient">Patient :</label>
-                    <select name="patient" id="patient">
-                        <?php
-                        // Connexion à la base de données
-                        $conn = new PDO("mysql:host=localhost;dbname=nom_de_la_base_de_donnees", "nom_utilisateur", "mot_de_passe");
-
-                        // Récupération des patients depuis la table Patient
-                        $query = "SELECT id_patient, nom, prenom FROM Patient";
-                        $result = $conn->query($query);
-
-                        // Affichage des options de la liste déroulante
-                        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="' . $row['id_patient'] . '">' . $row['nom'] . ' ' . $row['prenom'] . '</option>';
-                        }
-
-                        // Fermeture de la connexion à la base de données
-                        $conn = null;
-                        ?>
-                    </select><br><br>
-
-                    <input type="submit" value="Créer un rendez-vous">
-                </form>
-
-                    <label for="dateRDV">Date du rendez-vous :</label>
-                    <input type="date" id="dateRDV" name="dateRDV"><br><br>
-                    
-
-                    <input type="submit" value="Créer un compte">
-                    
-                </form>
-            </p> 
-        </div>
+        
         
     </body>
 
