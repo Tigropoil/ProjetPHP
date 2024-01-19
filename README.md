@@ -13,6 +13,6 @@ Mot de passe : $iutinfo <br><br>
 
 # Travail réalisé par LEMOINE Mathieu et LONGUET Cédric groupe D
 
-#Si problème avec l'hébergeur :
+# Si problème avec l'hébergeur :
 Nom de la base de donnée : docteurlibre_cabinet
 Infos de l'utilisateur utilisé : dans le 1er paragraphe
