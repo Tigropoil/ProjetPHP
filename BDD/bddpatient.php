@@ -5,7 +5,7 @@ class bddpatient {
 
 
 
-    public function connectpat() {
+    private function connectpat() {
         // Code de connexion à la base de données
         include 'BDD.php';
         $bdd= new bdd();
@@ -57,6 +57,13 @@ class bddpatient {
         $stmt->execute([$nom, $prenom, $civilite, $adresse, $ville, $codepostal, $dateNaissance, $lieuNaissance, $numSecu, $id]);
         $this->conn = null;
         return $stmt->rowCount();
+    }
+    public function selectbyID($idpatient) {
+        $this->conn = $this->connectpat();
+        $sql = "SELECT * FROM patient WHERE id_patient = $idpatient";
+        $result = $this->conn->query($sql);
+        $this->conn = null;
+        return $result;
     }
 }
 ?>

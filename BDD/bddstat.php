@@ -3,7 +3,7 @@
         private $conn;
     
     
-        public function connectrdv() {
+        private function connectrdv() {
             // Code de connexion à la base de données
             include 'BDD.php';
             $bdd= new bdd();

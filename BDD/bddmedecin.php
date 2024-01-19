@@ -4,7 +4,7 @@ class BddMedecin {
 
 
 
-    public function connectmed() {
+    private function connectmed() {
         // Code de connexion à la base de données
         include 'BDD.php';
         $bdd= new bdd();
@@ -28,6 +28,7 @@ class BddMedecin {
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([$nom, $prenom, $civilite, $specialite]);
         $this->conn = null;
+        header('Location: ./listeMedecin.php');
         
     }
     
@@ -54,6 +55,13 @@ class BddMedecin {
     public function select() {
         $this->conn = $this->connectmed();
         $sql = "SELECT * FROM medecin";
+        $result = $this->conn->query($sql);
+        $this->conn = null;
+        return $result;
+    }
+    public function selectMedecinbyID($idMedecin) {
+        $this->conn = $this->connectmed();
+        $sql = "SELECT * FROM medecin WHERE id_medecin = $idMedecin";
         $result = $this->conn->query($sql);
         $this->conn = null;
         return $result;

@@ -95,7 +95,7 @@
                     </form>";
                 echo "</td>";
                 echo"<td>
-                    <form action='./modifierUtilisateurs.php' class='tableau' method='post'>
+                    <form action='./modificationUtilisateurs.php' class='tableau' method='post'>
                         <button type='submit' name='id' value='" . $row['id_patient'] . "'>Modifier</button>
                     </form>";
                 echo "</td>";
