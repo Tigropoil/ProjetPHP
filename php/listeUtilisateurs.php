@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>listepatient</title>
+    <title>liste des patients</title>
 </head>
 <header>
         <div class="top">
@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <a href="./ajoutUtilisateurs.php">patient</a>
+    <h1>Liste des patients<h1>
     <table id="myTable">
                     <tr>
                         <th>Nom</th>
@@ -96,5 +96,7 @@
         }
         ?>
     </table>
+    <a href="../php/ajoutUtilisateurs.php">Ajouter un patient</a>
+
     </body>
 </html>
