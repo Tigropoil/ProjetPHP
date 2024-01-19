@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <h1>Liste des RDV<h1>
+    <h1>Liste des RDV<h1><br>
     <table id="myTable">
                     <tr>
                         <th>id_medecin</th>
@@ -73,6 +73,7 @@
         }
         ?>
     </table>
+    <br>
     <a href="../php/ajoutRDV.php" class="aa">Ajouter un RDV</a>
 </body>
 
