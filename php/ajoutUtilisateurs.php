@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -88,12 +86,7 @@
                 </form>
             </p> 
         </div>
-        
-    </body>
-
-</html>
-
-<?php
+        <?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -116,3 +109,6 @@ include '../BDD/bddpatient.php';
 $bdd = new bddpatient();
 $bdd->ajouterpatientquery($nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu, $medecinId);
 ?>
+    </body>
+
+</html>
