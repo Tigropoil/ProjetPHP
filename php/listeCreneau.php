@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,9 @@
             </div>
     </header>
 <body>
-    <h1>Liste des RDV</h1><br>
+    <div class="titre">
+        <h1>Liste des RDV</h1>
+    </div>
     <table id="myTable">
                     <tr>
                         <th>id_medecin</th>
