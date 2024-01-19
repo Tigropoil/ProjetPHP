@@ -91,7 +91,7 @@
             <?php
                 echo"<td>
                     <form action='./supprimerUtilisateurs.php' method='post'>
-                        <input type='submit' name='id' value='" . $row['id_patient'] . "'>
+                        <button type='submit' name='id' value='" . $row['id_patient'] . "'>Supprimer</button>
                     </form>";
                 echo "</td>";
             ?>
