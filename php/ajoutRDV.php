@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>Ajouter un médecin</title>
+		<title>Ajouter un RDV</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="../style.css" />
@@ -36,7 +36,7 @@
         
     <body>
         <div class="titre">
-            <h1>Ajouter un Patient</h1>
+            <h1>Ajouter un RDV</h1>
         </div>
         <div class="corps">
             <p>

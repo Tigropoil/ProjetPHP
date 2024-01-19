@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>liste medecin</title>
+    <title>liste des médecins</title>
 </head>
 <header>
         <div class="top">
@@ -29,7 +29,7 @@
             </div>
     </header>
 <body>
-    <a href="../html/ajoutMedecin.html">medecin</a>
+    <h1>Liste des médecins<h1>
     <table id="myTable">
                     <tr>
                         <th>Nom</th>
@@ -68,5 +68,6 @@
             }
             ?>
         </table>
+        <a href="../php/ajoutMedecin.php">Ajouter un médecin</a>
         </body>
 </html>
