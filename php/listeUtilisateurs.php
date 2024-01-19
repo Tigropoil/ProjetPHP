@@ -36,9 +36,9 @@
     <h1>Liste des patients</h1><br>
     <table id="myTable">
                     <tr>
+                        <th>Civilité</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Civilité</th>
                         <th>adresse</th>
                         <th>ville</th>
                         <th>codePostal</th>
@@ -59,13 +59,13 @@
         $recordID = $row["id_patient"]; ?>
         <tr>
             <td>
+                <?php echo $row["civilite"]; ?>
+            </td>
+            <td>
                 <?php echo $row["nom"]; ?>
             </td>
             <td>
                 <?php echo $row["prenom"]; ?>
-            </td>
-            <td>
-                <?php echo $row["civilite"]; ?>
             </td>
             <td>
                 <?php echo $row["adresse"]; ?>

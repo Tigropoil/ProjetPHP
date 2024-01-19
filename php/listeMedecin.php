@@ -36,10 +36,10 @@
     <h1>Liste des médecins</h1><br>
     <table id="myTable">
                     <tr>
+                        <th>Civilité</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Civilité</th>
-                        <th>Choix</th>
+                        <th>Spécialité</th>
                     </tr>
 <?php
     if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
@@ -52,14 +52,15 @@
           while ($row = $records->fetch()) {
             $recordID = $row["id_medecin"]; ?>
             <tr>
-              <td>
-                <?php echo $row["nom"]; ?>
-              </td>
-              <td>
-                <?php echo $row["prenom"]; ?>
-              </td>
-              <td>
-                <?php echo $row["civilite"]; ?>
+                <td>
+                    <?php echo $row["civilite"]; ?>
+                </td>
+                <td>
+                    <?php echo $row["nom"]; ?>
+                </td>
+                <td>
+                    <?php echo $row["prenom"]; ?>
+                </td>
                 <td>
                     <?php echo $row["specialite"]; ?>
                 </td>
