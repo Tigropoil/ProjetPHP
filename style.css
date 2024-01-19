@@ -23,7 +23,6 @@ header{
 .boutonHeader{
     display: flex;
     justify-content:right;
-    font-family: 'Poppins', sans-serif;
     grid-column: 3;
     margin-right: 2%;
     margin-top: -5%;
@@ -35,19 +34,16 @@ header{
 .titre{
     display: inline;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
 }
 .corps{
     display: inline;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
 }
 .secret{
     display: flex;
     text-align: center;
     justify-content: space-evenly;
     /*justify-content: center;*/
-    font-family: 'Poppins', sans-serif;
 
 }
 form{
@@ -92,12 +88,10 @@ table{
         display: flex;
         flex-direction: column;
         text-align: center;
-        font-family: 'Poppins', sans-serif;
     }
     .boutonHeader{
         display: flex;
         justify-content:right;
-        font-family: 'Poppins', sans-serif;
         grid-column: 3;
         margin-right: 2%;
         margin-top: -10%;
