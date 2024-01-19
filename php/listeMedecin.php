@@ -69,6 +69,11 @@
                             <button type='submit' name='id' value='" . $row['id_medecin'] . "'>Supprimer</button>
                         </form>";
                     echo "</td>";
+                    echo"<td>
+                        <form action='./modificationMedecin.php' class='tableau' method='post'>
+                            <button type='submit' name='id' value='" . $row['id_medecin'] . "'>Modifier</button>
+                        </form>";
+                echo "</td>";
                 ?>
             </tr>
             <?php

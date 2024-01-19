@@ -94,6 +94,11 @@
                         <button type='submit' name='id' value='" . $row['id_patient'] . "'>Supprimer</button>
                     </form>";
                 echo "</td>";
+                echo"<td>
+                    <form action='./modifierUtilisateurs.php' class='tableau' method='post'>
+                        <button type='submit' name='id' value='" . $row['id_patient'] . "'>Modifier</button>
+                    </form>";
+                echo "</td>";
             ?>
         </tr>
         <?php
