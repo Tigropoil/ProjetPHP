@@ -83,15 +83,13 @@
                         $conn = null;
                         ?>
                     </select><br><br>
-
-                    <input type="submit" value="Créer un rendez-vous">
                 </form>
 
                     <label for="dateRDV">Date du rendez-vous :</label>
                     <input type="date" id="dateRDV" name="dateRDV"><br><br>
                     
 
-                    <input type="submit" value="Créer un compte">
+                    <input type="submit" value="Créer un RDV">
                     
                 </form>
             </p> 
