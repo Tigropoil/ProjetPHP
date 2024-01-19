@@ -57,7 +57,7 @@
             $numSecu = $infoPatient['numSecu'];
             $medecinId = $infoPatient['id_medecin'];
             ?>
-            <form action="traitementModificationMedecin.php" class='form' method="POST">
+            <form action="modificationUtilisateurs.php" class='form' method="POST">
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" value="<?php echo $nom; ?>"><br><br>
 
@@ -87,14 +87,29 @@
 
                 <label for="medecinId">ID du Médecin :</label>
                 <input type="text" name="medecinId" value="<?php echo $medecinId; ?>"><br><br>
+                <input type="hidden" name="id" value="<?php echo $idPatient; ?>">
                 <input type="submit" value="Modifier">
             </form>
             <?php
         }else{
             echo "Patient introuvable.";
         }
-        $patient->modifierpatientquery($idPatient,$nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu,$medecinId);
-
+        if(isset($_POST['nom']) 
+        && isset($_POST['prenom']) 
+        && isset($_POST['civilite']) 
+        && isset($_POST['adresse']) 
+        && isset($_POST['ville']) 
+        && isset($_POST['codepostal']) 
+        && isset($_POST['dateNaissance']) 
+        && isset($_POST['lieuNaissance']) 
+        && isset($_POST['numSecu'])
+        && isset($_POST['medecinId']) ) {
+            echo"JE SUIS LA";
+        $patient->modifierpatientquery($idPatient,$_POST['nom'],$_POST['prenom'],$_POST['civilite'],$_POST['adresse']
+        ,$_POST['ville'],$_POST['codePostal'],$_POST['dateNaissance'],$_POST['lieuNaissance'],$_POST['numSecu'],$_POST['medecinId']);
+        header('Location: ../php/listeUtilisateurs.php');
+    }
+        
     ?>
 
 </body>

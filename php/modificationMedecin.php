@@ -55,7 +55,7 @@
             $idmedecin=$infoMedecin['id_medecin'];
             // Afficher le formulaire prérempli
             ?>
-            <form action="modificationMedecin.php" method="POST">
+            <form action="modificationMedecin.php" class='form' method="POST">
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" value="<?php echo $nom; ?>" require><br>
 

@@ -61,10 +61,11 @@
         $recordID = $row["id_patient"]; ?>
         <tr>
             <td>
-                <?php echo $row["civilite"]; ?>
+                <?php echo $row["nom"]; ?>
+                
             </td>
             <td>
-                <?php echo $row["nom"]; ?>
+                <?php echo $row["civilite"]; ?>
             </td>
             <td>
                 <?php echo $row["prenom"]; ?>

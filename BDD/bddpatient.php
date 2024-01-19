@@ -41,6 +41,7 @@ class bddpatient {
             throw $e;
         }
         $this->conn = null;
+
     }
 
     public function supprimerpatientquery($patientId) {
@@ -54,11 +55,11 @@ class bddpatient {
         header('Location: ./listeUtilisateurs.php');
     }
 
-    public function modifierpatientquery($id,$nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu) {
+    public function modifierpatientquery($id,$nom,$prenom,$civilite,$adresse,$ville,$codepostal,$dateNaissance,$lieuNaissance,$numSecu,$idMedecin) {
         $this->conn = $this->connectpat();
-        $sql = "UPDATE patient SET nom=?, prenom=?, civilite=?, adresse=?, ville=?, codePostal=?, dateNaissance=?, lieuNaissance=?, numSecu=? WHERE id_patient=?";
+        $sql = "UPDATE patient SET nom=?, prenom=?, civilite=?, adresse=?, ville=?, codePostal=?, dateNaissance=?, lieuNaissance=?,id_medecin=?, numSecu=? WHERE id_patient=?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$nom, $prenom, $civilite, $adresse, $ville, $codepostal, $dateNaissance, $lieuNaissance, $numSecu, $id]);
+        $stmt->execute([$nom, $prenom, $civilite, $adresse, $ville, $codepostal, $dateNaissance, $lieuNaissance,$idMedecin, $numSecu, $id]);
         $this->conn = null;
         return $stmt->rowCount();
     }
