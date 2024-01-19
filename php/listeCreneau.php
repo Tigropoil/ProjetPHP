@@ -44,6 +44,9 @@
                         <th>supprimer</th>
                     </tr>
     <?php
+    if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+        header('Location: ../index.html');
+    }
     include '../BDD/bddrdv.php';
     $rdv = new BddRdv();
     $records = $rdv->afficherRdv();

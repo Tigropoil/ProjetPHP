@@ -6,6 +6,11 @@
     <title>modificationMedecin</title>
 </head>
 <body>
-    
+    <?php
+
+        if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
+            header('Location: ../index.html');
+        }
+    ?>
 </body>
 </html>
