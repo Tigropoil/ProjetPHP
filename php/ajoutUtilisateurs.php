@@ -80,10 +80,11 @@
 
                              // Close the select element
                             echo "</select>"; ?>
-
+                    <br><br>
                     <input type="submit" value="Créer un compte">
                     
                 </form>
+                <a href="./listeUtilisateurs.php" class="aa">Retour</a>
             </p> 
         </div>
         
