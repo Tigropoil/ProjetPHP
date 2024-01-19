@@ -1,6 +1,9 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+h1{
+    text-align: center;
+}
 .logo{
     display: inline-flex;
 }
@@ -61,11 +64,16 @@ fieldset{
     height: 300px;
     width: 300px;
 }
-table{
+table, tr, td, th{
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
 
+}
+table{
+    margin: auto;
+    text-align: center;
+    font-size: medium;
 }
 
 @media only screen and (max-width:800px){

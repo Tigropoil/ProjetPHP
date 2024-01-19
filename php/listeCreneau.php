@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <h1>Liste des RDV<h1>
+    <h1>Liste des RDV<h1><br>
     <?php
     $pseudo = "med1";
     $password = "med1";
@@ -77,6 +77,7 @@
         echo "Aucun RDV trouvé.";
     }
     ?>
+    <br>
     <a href="../php/ajoutRDV.php" class="aa">Ajouter un RDV</a>
 </body>
 

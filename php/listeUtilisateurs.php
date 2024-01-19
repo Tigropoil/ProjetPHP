@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <h1>Liste des patients<h1>
+    <h1>Liste des patients<h1><br>
     <table id="myTable">
                     <tr>
                         <th>Nom</th>
@@ -96,6 +96,7 @@
         }
         ?>
     </table>
+    <br>
     <a href="../php/ajoutUtilisateurs.php">Ajouter un patient</a>
 
     </body>
