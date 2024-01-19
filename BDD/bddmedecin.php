@@ -47,12 +47,17 @@ class BddMedecin {
     
     public function modifiermedecinquery($nom,$prenom,$specialite,$medecinId) {
         $this->conn = $this->connectmed();
-        $stmt = $this->conn->prepare("UPDATE medecin SET nom=?, prenom=?, specialite=? WHERE id_medecin=?");
-        $stmt->bindParam(1, $nom);
-        $stmt->bindParam(2, $prenom);
-        $stmt->bindParam(3, $specialite);
-        $stmt->execute([$nom, $prenom, $specialite]);
-        $this->conn = null;
+        try {
+        $stmt = $this->conn->prepare("UPDATE medecin SET nom = ?, prenom = ?, specialite = ? WHERE id_medecin = ?");
+        $stmt->bindParam('nom', $nom);
+        $stmt->bindParam('prenom', $prenom);
+        $stmt->bindParam('specialite', $specialite);
+        $stmt->bindParam('id_medecin', $medecinId);
+        $stmt->execute([$nom, $prenom, $specialite,$medecinId]);
+        }catch(PDOException $e){
+            error_log("Error executing SQL query: " . $e->getMessage());
+            throw $e;
+        }
     }
     public function select() {
         $this->conn = $this->connectmed();

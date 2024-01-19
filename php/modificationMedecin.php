@@ -66,15 +66,17 @@
                 <input type="text" name="specialite" value="<?php echo $specialite; ?>"require><br>
 
                 <input type="hidden" name="id" value="<?php echo $idMedecin; ?>">
+                
                 <input type="submit" value="Modifier">
             </form>
             <?php
         } else {
             echo "Médecin introuvable.";
         }
-        echo "$idMedecin";
+        
         if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['specialite'])){
             $medecin->modifiermedecinquery($_POST['nom'],$_POST['prenom'],$_POST['specialite'],$idmedecin);
+            header('Location: ../php/listeMedecin.php');
         }
     ?>
 </body>
