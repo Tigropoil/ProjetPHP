@@ -63,7 +63,7 @@ fieldset{
     height: 300px;
     width: 300px;
 }
-tr, td, th{
+table{
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
