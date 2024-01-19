@@ -38,40 +38,10 @@
     if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
         header('Location: ../index.html');
     }
-// Assuming you have established a database connection
-// Informations de connexion à la base de données
-$bdname = 'cabinet';
-$server='localhost';
-$username = "med1";
-$password = "med1";
+    include '../BDD/bddstat.php';
+    $stat = new Bddstat();
+    $result = $stat->groueagequey();
 
-// Création de la connexion
-$connection = mysqli_connect($server, $username, $password, $dbname);
-
-// Vérification de la connexion
-if (!$connection) {
-    die("Échec de la connexion à la base de données : " . mysqli_connect_error());
-}
-
-// Utilisez la connexion pour exécuter des requêtes SQL ou effectuer d'autres opérations sur la base de données
-
-// Fermeture de la connexion
-mysqli_close($connection);
-
-// Query to retrieve the distribution of users by gender and age
-$query = "SELECT civilite, 
-                 CASE 
-                    WHEN TIMESTAMPDIFF(YEAR, dateNaissance, CURDATE()) < 25 THEN 'Moins de 25 ans'
-                    WHEN TIMESTAMPDIFF(YEAR, dateNaissance, CURDATE()) BETWEEN 25 AND 50 THEN 'Entre 25 et 50 ans'
-                    ELSE 'Plus de 50 ans'
-                 END AS age_group,
-                 COUNT(*) AS count
-          FROM Patient
-          GROUP BY civilite, age_group";
-
-$result = mysqli_query($connection, $query);
-
-// Generate the table
 echo '<table>
         <tr>
             <th>Sexe</th>
@@ -79,7 +49,7 @@ echo '<table>
             <th>Nombre d\'usagers</th>
         </tr>';
 
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo '<tr>
             <td>' . $row['civilite'] . '</td>
             <td>' . $row['age_group'] . '</td>

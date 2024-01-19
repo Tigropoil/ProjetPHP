@@ -7,7 +7,7 @@ class bddpatient {
 
     private function connectpat() {
         // Code de connexion à la base de données
-        include 'BDD.php';
+        require_once 'BDD.php';
         $bdd= new bdd();
         $this->conn = $bdd->connect();
     return $this->conn;
