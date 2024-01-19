@@ -1,5 +1,5 @@
 # ProjetPHP
-Mini ProjetPHP
-url : docteurlibre.alwaysdata.net
-nom d'utilisateur : 344098
-mot de passe : $iutinfo
+Mini ProjetPHP <br>
+url : docteurlibre.alwaysdata.net <br>
+nom d'utilisateur : 344098 <br>
+mot de passe : $iutinfo <br>
