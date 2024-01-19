@@ -4,10 +4,10 @@
 
         public function connect() {
             // Code de connexion à la base de données
-            $host = "localhost";
+            $host = "mysql-docteurlibre.alwaysdata.net";
             $username = $_COOKIE['login'];
             $password = $_COOKIE['password'];
-            $database = "cabinet";
+            $database = "docteurlibre_cabinet";
     
             try {
                 $this->conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
