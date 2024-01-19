@@ -39,9 +39,10 @@
     <table id="myTable">
         <tr>
             <th>id_medecin</th>
+            <th>id_patient</th>
             <th>date</th>
             <th>heure début</th>
-            <th>heure fin</th>
+            <th>durée</th>
             <th>supprimer</th>
         </tr>
         <?php
@@ -58,14 +59,16 @@
             <td>
                 <?php echo $recordID; ?>
             </td>
-          <td>
+            <td>
                 <?php echo $row["id_patient"]; ?>
+            
             </td>
             <td>
                 <?php echo $row["dateRDV"]; ?>
             </td>
             <td>
                 <?php echo $row["heureRDV"]; ?>
+            </td>
             <td>
                 <?php echo $row["dureeRDV"]; ?>
             </td>
