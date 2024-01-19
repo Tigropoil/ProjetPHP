@@ -33,7 +33,7 @@
             </div>
     </header>
 <body>
-    <a href="../html/ajoutUtilisateurs.html">patient</a>
+    <a href="./ajoutUtilisateurs.php">patient</a>
     <table id="myTable">
                     <tr>
                         <th>Nom</th>

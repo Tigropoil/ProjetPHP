@@ -35,7 +35,58 @@
     </header>
         
     <body>
-        
+        <div class="titre">
+            <h1>Ajouter un Patient</h1>
+        </div>
+        <div class="corps">
+            <p>
+
+                </form>
+
+                <form action="traitement.php" method="post">
+                    <label for="medecin">Médecin :</label>
+                    <select name="medecin" id="medecin">
+                        <?php
+                        include '../BDD/bddmedecin.php';
+                        include '../BDD/bddpatient.php';
+
+                        $medecin = new BddMedecin();
+                        $patient = new bddpatient();
+
+                        $resultM = $medecin->affichermedecinlistquery();
+                        // Affichage des options de la liste déroulante
+                        while ($row = $resultM->fetch(PDO::FETCH_ASSOC)) {
+                            echo '<option value="' . $row['id_medecin'] . '">' . $row['nom'] . ' ' . $row['prenom'] . '</option>';
+                        }
+
+                        // Fermeture de la connexion à la base de données
+                        $conn = null;
+                        ?>
+                    </select><br><br>
+
+                    <label for="patient">Patient :</label>
+                    <select name="patient" id="patient">
+                        <?php
+                        // Connexion à la base de données
+                        $resultP = $patient->afficherpatientlistquery();
+                        while ($row = $resultP->fetch(PDO::FETCH_ASSOC)) {
+                            echo '<option value="' . $row['id_patient'] . '">' . $row['nom'] . ' ' . $row['prenom'] . '</option>';
+                        }
+
+                        ?>
+                    </select><br><br>
+
+                    <label for="dateRDV">Date du rendez-vous :</label>
+                    <input type="date" id="dateRDV" name="dateRDV"><br><br>
+                    
+                    <label for="heureRDV">Heure du rendez-vous :</label>
+                    <input type="time" id="heureRDV" name="heureRDV"><br><br>
+
+                    <input type="submit" value="Créer un RDV">
+                    
+                </form>
+            </p> 
+        </div>
         
     </body>
 

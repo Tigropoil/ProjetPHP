@@ -14,26 +14,31 @@ class BddRdv {
         $this->database = $database;
     }
 
-    public function connect() {
-        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+    public function connectrdv() {
+        try {
+            $dsn = "mysql:host={$this->host};dbname={$this->database}";
+            $this->conn = new PDO($dsn, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
         }
     }
 
-    public function insertRdv($date, $time, $patientId) {
-        $sql = "INSERT INTO rdv (date, time, patient_id) VALUES ('$date', '$time', '$patientId')";
-        if ($this->conn->query($sql) === TRUE) {
+    public function insertRdv($date, $time, $patientId, $medecinId) {
+        try {
+            $sql = "INSERT INTO rdv (date, time, patient_id, medecin_id) VALUES (?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$date, $time, $patientId, $medecinId]);
             echo "Rdv inserted successfully";
-        } else {
-            echo "Error inserting rdv: " . $this->conn->error;
+        } catch (PDOException $e) {
+            echo "Error inserting rdv: " . $e->getMessage();
         }
     }
 
-    // Add other methods as needed
+    // Ajoutez d'autres méthodes au besoin
 
     public function close() {
-        $this->conn->close();
+        $this->conn = null;
     }
 }
 

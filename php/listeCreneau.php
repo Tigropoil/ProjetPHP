@@ -74,10 +74,10 @@
         }
         echo "</table>";
     } else {
-        echo "Aucun médecin trouvé.";
+        echo "Aucun RDV trouvé.";
     }
     ?>
-    <a href="../php/ajoutRDV" class="aa">Ajouter un RDV</a>
+    <a href="../php/ajoutRDV.php" class="aa">Ajouter un RDV</a>
 </body>
 
 
