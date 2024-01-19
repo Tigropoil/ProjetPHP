@@ -60,18 +60,19 @@
                 </form>
             </p> 
         </div>
+        
+    </body>
+
+</html>
 <?php
-$nom=$_POST['nom'];
-$prenom=$_POST['prenom'];
-$civilite=$_POST['civilite'];
-$specialite=$_POST['specialite'];
 
 include '../BDD/bddmedecin.php';
 
 // Exécuter une requête INSERT pour ajouter le médecin à la base de données
+if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['civilite']) && isset($_POST['specialite'])) {
 $addmed = new BddMedecin();
-$addmed->ajoutermedecinquery($nom,$prenom,$civilite,$specialite);
-?>
+$addmed->ajoutermedecinquery(isset($_POST['nom']), isset($_POST['prenom']), isset($_POST['civilite']), isset($_POST['specialite']));
+}?>
     </body>
 
 </html>
