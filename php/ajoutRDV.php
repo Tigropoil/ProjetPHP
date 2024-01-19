@@ -43,7 +43,7 @@
 
                 </form>
 
-                <form action="ajoutRDV.php" method="post">
+                <form action="ajoutRDV.php" class='form' method="post">
                     <label for="medecin">Médecin :</label>
                     <select name="medecin" id="medecin">
                         <?php

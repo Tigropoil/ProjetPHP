@@ -40,7 +40,7 @@
         </div>
         <div class="corps">
             <p>
-                <form action="./ajoutUtilisateurs.php" method="post">
+                <form action="./ajoutUtilisateurs.php" class='form' method="post">
                     <fieldset>
                         <label for="civilite">Monsieur</label>
                         <input type="radio" id="civilite" name="civilite" value="mr" checked />
