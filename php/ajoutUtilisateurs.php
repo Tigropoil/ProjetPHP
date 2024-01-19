@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -94,6 +92,8 @@
 </html>
 
 <?php
+    
+
 
 include '../BDD/bddpatient.php';
 if(isset($_POST['nom']) 

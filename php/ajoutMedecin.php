@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
+    <head>
 		<title>Ajouter un médecin</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,10 @@
                         <a href="../html/secretariat.html" class="aa">Secretariat</a>
                     </li>
                     <li>
-                        <a href="./listeUtilisateurs.php" class="aa">Patients</a>
+                        <a href="../php/listeUtilisateurs.php" class="aa">Patients</a>
                     </li>
                     <li>
-                        <a href="./listeMedecin.php" class="aa">Médecins</a>
+                        <a href="../php/listeMedecin.php" class="aa">Médecins</a>
                     </li>
                     <li>
                         <a href="../php/stat.php" class="aa">Statistiques</a>
@@ -60,7 +60,11 @@
                 </form>
             </p> 
         </div>
-        <?php
+        
+    </body>
+
+</html>
+<?php
 
 include '../BDD/bddmedecin.php';
 
