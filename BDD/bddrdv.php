@@ -6,7 +6,7 @@ class BddRdv {
 
     private function connectrdv() {
         // Code de connexion à la base de données
-        include 'BDD.php';
+        require_once 'BDD.php';
         $bdd= new bdd();
         $this->conn = $bdd->connect();
     
@@ -38,6 +38,18 @@ class BddRdv {
         }
         $this->conn = null;
         return $result;
+    }
+    public function supprimerrdvquery($idMedecin,$idPatient,$date,$heureDebut){
+        $this->conn = $this->connectrdv();
+        try {
+            $sql = "DELETE FROM rdv WHERE dateRDV = ? AND heureRDV = ?  and id_patient = ? and id_medecin = ? ";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$date, $heureDebut, $idPatient, $idMedecin]);
+        }
+        catch (PDOException $e) {
+            echo "Error deleting rdv: " . $e->getMessage();
+        }
+        $this->conn = null;
     }
 
     // Ajoutez d'autres méthodes au besoin

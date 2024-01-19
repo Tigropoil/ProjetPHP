@@ -98,7 +98,11 @@
             if(isset($_COOKIE['login'])==null && isset($_COOKIE['password'])==null){
                 header('Location: ../index.html');
             }
-            
+            echo "date".$_POST['dateRDV'];
+            echo 'heure'.$_POST['heureRDV'];
+            echo "patient".$_POST['patient'];
+            echo "medecin".$_POST['medecin'];
+            echo "duree".$_POST['duree'];
         include '../BDD/bddrdv.php';
         if(isset($_POST['dateRDV']) && isset($_POST['heureRDV']) && isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['duree'])) {
         $rdv = new BddRdv();
